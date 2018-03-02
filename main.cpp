@@ -63,8 +63,7 @@ int main(){
         cout<<"Ingrese numero de zona"<<endl;
         cin>>tipoZONA;
 
-
-
+        cout<<"-----"<<endl;
 
         //patas
         cout<<"Ingrese la cantidad de patas"<<endl;
@@ -79,6 +78,8 @@ int main(){
         cin>>tipoPATAS;
         Patas* patas = new Patas(cantidadPATAS, largoPATAS, tipoPATAS);
 
+        cout<<"----"<<endl;
+
         //pelaje
         cout<<"Ingrese el color de pelaje"<<endl;
         cin>> colorPELAJE;
@@ -87,6 +88,8 @@ int main(){
         cout<<"Ingrese el largo del pelaje"<<endl;
         cin>>largoPELAJE;
         Pelaje* pelaje = new Pelaje(colorPELAJE, grosoPELAJE, largoPELAJE);
+
+        cout<<"-----"<<endl;
 
         //ojos
         cout<<"Ingrese el color del ojo"<<endl;
@@ -100,12 +103,17 @@ int main(){
           vision = false;
         }
         Ojo* ojo = new Ojo(colorOJO, vision);
+
+        cout<<"----"<<endl;
+
         //oreja
         cout<<"Ingrese el tamano de la oreja"<<endl;
         cin>>tamanoOREJA;
         cout<<"Ingrese la audicion"<<endl;
         cin>>audicionOREJA;
         Oreja* oreja = new Oreja(tamanoOREJA, audicionOREJA);
+
+        cout<<"----"<<endl;
 
         //cola
         int largoCOLA;
@@ -123,6 +131,7 @@ int main(){
           PELUDA = false;
         }
         Cola* cola = new Cola(largoCOLA, PELUDA);
+        
         Animal* animal = new Animal(nombreESPECIE, nombreANIMAL, tamanoANIMAL,tipoZONA, patas, pelaje, oreja, ojo, cola);
         espera.push_back(animal);
         break;
