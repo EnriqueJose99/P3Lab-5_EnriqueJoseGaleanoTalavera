@@ -17,7 +17,7 @@ int main(){
   vector<Animal*> espera;
   Zoo* zool;
   int opc = 0;
-  while (opc != 7) {
+  while (opc != 6) {
     switch (opc = menu()) {
       case 1:{
         string nombreZoo;
@@ -138,16 +138,21 @@ int main(){
         for (int i = 0; i < espera.size(); i++) {
           cout<<"Posicion: "<< i <<espera[i]->getNombreAnimal()<<endl;
         }
-        cout<<"Ingrese la pocision que desa eliminar"<<endl;
-        cin>>pos;
-        delete espera[pos];
-        espera.erase(espera.begin() + pos);
-        cout<<"Animal eliminado"<<endl;
+        if (espera.size() == 0) {
+          cout<<"No hay animal en la lista de espera"<<endl;
+        }else{
+          cout<<"Ingrese la pocision que desa eliminar"<<endl;
+          cin>>pos;
+          delete espera[pos];
+          espera.erase(espera.begin() + pos);
+          cout<<"Animal eliminado"<<endl;
+        }
         break;
       }
       case 5:{
         Animal* animal;
         zool -> moverAnimales(espera);
+        espera.clear();
         zool -> imprimir();
         break;
       }
@@ -159,12 +164,13 @@ int menu(){
   int bandera = 0;
   int numberElection = 0;
   while (bandera == 0) {
+    cout<<"-----Menu-----"<<endl;
     cout<<"1.Cree zoologico"<<endl;
     cout<<"2.Cree Animal"<<endl;
     cout<<"3.Listar animales de la lista de epera"<<endl;
     cout<<"4.Eliminar de la lista de espera"<<endl;
     cout<<"5.Transferir al zoologico"<<endl;
-    cout<<"7.Salir"<<endl;
+    cout<<"6.Salir"<<endl;
     cout<<"Ingrese numero para ingresar: "<<endl;
     cin>>numberElection;
     return numberElection;
