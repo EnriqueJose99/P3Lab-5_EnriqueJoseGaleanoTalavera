@@ -10,7 +10,7 @@ Pelaje::Pelaje(){
 Pelaje::Pelaje(string pColor, int pGrosor, int pLargo){
   color = pColor;
   grosor = pGrosor;
-  largo = pLArgo;
+  largo = pLargo;
 }
 
 void Pelaje::setColor(string pColor){
