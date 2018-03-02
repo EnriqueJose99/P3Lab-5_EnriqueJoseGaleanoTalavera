@@ -31,6 +31,8 @@ public:
   int getTamano();
   void setCapacidadPer(int);
   int getCapacidadPer();
+  void moverAnimales(vector<Animal*> &);
+  void imprimir();
 
 
 };

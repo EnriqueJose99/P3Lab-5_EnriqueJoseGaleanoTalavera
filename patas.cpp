@@ -7,7 +7,7 @@ Patas::Patas(){
 
 }
 
-Patas::Patas(int pCantidadPatas, int pLargoPatas, string pTipoPatas){
+Patas::Patas(int pCantidadPatas, int pLargoPatas, int pTipoPatas){
   cantidadPatas = pCantidadPatas;
   largoPatas = pLargoPatas;
   tipoPatas = pTipoPatas;
@@ -25,9 +25,9 @@ void Patas::setLargoPatas(int pLargoPatas){
 int Patas::getLargoPatas(){
   return largoPatas;
 }
-void Patas::setTiposPatas(string pTipoPatas){
+void Patas::setTiposPatas(int pTipoPatas){
   tipoPatas = pTipoPatas;
 }
-string Patas::getTiposPatas(){
+int Patas::getTiposPatas(){
   return tipoPatas;
 }
