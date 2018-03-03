@@ -17,7 +17,7 @@ int main(){
   vector<Animal*> espera;
   Zoo* zool;
   int opc = 0;
-  while (opc != 6) {
+  while (opc != 7) {
     switch (opc = menu()) {
       case 1:{
         string nombreZoo;
@@ -66,6 +66,7 @@ int main(){
         cout<<"-----"<<endl;
 
         //patas
+        cout<<"PATAS"<<endl;
         cout<<"Ingrese la cantidad de patas"<<endl;
         cin>>cantidadPATAS;
         cout<<"Ingrese el largo de las patas"<<endl;
@@ -81,9 +82,10 @@ int main(){
         cout<<"----"<<endl;
 
         //pelaje
-        cout<<"Ingrese el color de pelaje"<<endl;
+        cout<<"PELAJE"<<endl;
+        cout<<"Ingrese el color de pelaje (Ejm. negro, azul etc...)"<<endl;
         cin>> colorPELAJE;
-        cout<<"Ingrese el grosor del pelaje (numero)"<<endl;
+        cout<<"Ingrese el grosor del pelaje"<<endl;
         cin>>grosoPELAJE;
         cout<<"Ingrese el largo del pelaje"<<endl;
         cin>>largoPELAJE;
@@ -92,7 +94,8 @@ int main(){
         cout<<"-----"<<endl;
 
         //ojos
-        cout<<"Ingrese el color del ojo"<<endl;
+        cout<<"OJOS"<<endl;
+        cout<<"Ingrese el color del ojo (Ejm. negros, azules etc...)"<<endl;
         cin>>colorOJO;
         cout<<"Ingrese si es vision nucturna(numero 1 , 0)"<<endl;
         cin>>visionNOCTURNA;
@@ -107,6 +110,7 @@ int main(){
         cout<<"----"<<endl;
 
         //oreja
+        cout<<"OREJAS"<<endl;
         cout<<"Ingrese el tamano de la oreja"<<endl;
         cin>>tamanoOREJA;
         cout<<"Ingrese la audicion"<<endl;
@@ -116,6 +120,7 @@ int main(){
         cout<<"----"<<endl;
 
         //cola
+        cout<<"COLA"<<endl;
         int largoCOLA;
         int peludita;
         bool PELUDA;
@@ -131,7 +136,7 @@ int main(){
           PELUDA = false;
         }
         Cola* cola = new Cola(largoCOLA, PELUDA);
-        
+
         Animal* animal = new Animal(nombreESPECIE, nombreANIMAL, tamanoANIMAL,tipoZONA, patas, pelaje, oreja, ojo, cola);
         espera.push_back(animal);
         break;
@@ -145,7 +150,7 @@ int main(){
       case 4:{
         int pos =0;
         for (int i = 0; i < espera.size(); i++) {
-          cout<<"Posicion: "<< i <<espera[i]->getNombreAnimal()<<endl;
+          cout<<"Posicion "<<i<<": "<<espera[i]->getNombreAnimal()<<endl;
         }
         if (espera.size() == 0) {
           cout<<"No hay animal en la lista de espera"<<endl;
@@ -162,7 +167,20 @@ int main(){
         Animal* animal;
         zool -> moverAnimales(espera);
         espera.clear();
+        break;
+      }
+      case 6:{
         zool -> imprimir();
+        break;
+      }
+      case 7:{
+        delete zool;
+        delete animal;
+        delete patas;
+        delete pelaje;
+        delete ojo;
+        delete oreja;
+        delete cola;
         break;
       }
     }
@@ -179,7 +197,8 @@ int menu(){
     cout<<"3.Listar animales de la lista de epera"<<endl;
     cout<<"4.Eliminar de la lista de espera"<<endl;
     cout<<"5.Transferir al zoologico"<<endl;
-    cout<<"6.Salir"<<endl;
+    cout<<"6.Imprimir animales del zoologico"<<endl;
+    cout<<"7.Salir"<<endl;
     cout<<"Ingrese numero para ingresar: "<<endl;
     cin>>numberElection;
     return numberElection;
