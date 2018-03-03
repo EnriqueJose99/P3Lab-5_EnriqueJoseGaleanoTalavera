@@ -16,6 +16,12 @@ int menu();
 int main(){
   vector<Animal*> espera;
   Zoo* zool;
+  Animal* animal;
+  Patas* patas;
+  Pelaje* pelaje;
+  Oreja* oreja;
+  Cola* cola;
+  Ojo* ojo;
   int opc = 0;
   while (opc != 7) {
     switch (opc = menu()) {
@@ -77,7 +83,7 @@ int main(){
         cout<<"3.Garras"<<endl;
         cout<<"Ingrese numero para seleccionar el tipo"<<endl;
         cin>>tipoPATAS;
-        Patas* patas = new Patas(cantidadPATAS, largoPATAS, tipoPATAS);
+        patas = new Patas(cantidadPATAS, largoPATAS, tipoPATAS);
 
         cout<<"----"<<endl;
 
@@ -89,7 +95,7 @@ int main(){
         cin>>grosoPELAJE;
         cout<<"Ingrese el largo del pelaje"<<endl;
         cin>>largoPELAJE;
-        Pelaje* pelaje = new Pelaje(colorPELAJE, grosoPELAJE, largoPELAJE);
+        pelaje = new Pelaje(colorPELAJE, grosoPELAJE, largoPELAJE);
 
         cout<<"-----"<<endl;
 
@@ -105,7 +111,7 @@ int main(){
         if(visionNOCTURNA == 0){
           vision = false;
         }
-        Ojo* ojo = new Ojo(colorOJO, vision);
+        ojo = new Ojo(colorOJO, vision);
 
         cout<<"----"<<endl;
 
@@ -115,7 +121,7 @@ int main(){
         cin>>tamanoOREJA;
         cout<<"Ingrese la audicion"<<endl;
         cin>>audicionOREJA;
-        Oreja* oreja = new Oreja(tamanoOREJA, audicionOREJA);
+        oreja = new Oreja(tamanoOREJA, audicionOREJA);
 
         cout<<"----"<<endl;
 
@@ -135,9 +141,9 @@ int main(){
         if (peludita == 0) {
           PELUDA = false;
         }
-        Cola* cola = new Cola(largoCOLA, PELUDA);
+        cola = new Cola(largoCOLA, PELUDA);
 
-        Animal* animal = new Animal(nombreESPECIE, nombreANIMAL, tamanoANIMAL,tipoZONA, patas, pelaje, oreja, ojo, cola);
+        animal = new Animal(nombreESPECIE, nombreANIMAL, tamanoANIMAL,tipoZONA, patas, pelaje, oreja, ojo, cola);
         espera.push_back(animal);
         break;
       }
