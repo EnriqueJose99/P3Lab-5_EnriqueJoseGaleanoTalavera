@@ -180,13 +180,7 @@ int main(){
         break;
       }
       case 7:{
-        delete zool;
-        delete animal;
-        delete patas;
-        delete pelaje;
-        delete ojo;
-        delete oreja;
-        delete cola;
+
         break;
       }
     }
